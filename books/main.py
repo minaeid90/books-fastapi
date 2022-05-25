@@ -106,5 +106,5 @@ async def update_book(book_name, book_title, book_author):
 async def delete_book(book_name: str):
     if book_name in BOOKS:
         del BOOKS[book_name]
-        # print()
+        print()
         return BOOKS

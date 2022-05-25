@@ -90,20 +90,20 @@ async def create_book(book_title, book_auhor):
                 current_book = x
 
     BOOKS[f"book_{current_book+1}"] = {'title': book_title,
-                                        'author': book_auhor}
+                                       'author': book_auhor}
     return BOOKS[f"book_{current_book+1}"]
 
-@app.put('/book/{book_name}')
-async def update_book(book_name, book_title,book_author):
 
-    book_info = {'title':book_title, 'author': book_author}
+@app.put('/book/{book_name}')
+async def update_book(book_name, book_title, book_author):
+
+    book_info = {'title': book_title, 'author': book_author}
     BOOKS[book_name] = book_info
     return BOOKS[book_name]
 
+
 @app.delete('/book/{book_name}')
-async def delete_book(book_name:str):
+async def delete_book(book_name: str):
     if book_name in BOOKS:
         del BOOKS[book_name]
-        return BOOKS 
-
-        
+        return BOOKS
